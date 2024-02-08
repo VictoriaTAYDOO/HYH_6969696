@@ -5,12 +5,12 @@ import pygame
 import requests
 
 a = input().split()
-x, y = float(a[0]), float(a[1])
+x, y = a[0], a[1]
 m = float(input())
 running = True
 
 while running:
-    map_request = f"http://static-maps.yandex.ru/1.x/?ll={x},{y}&spn={m},20&l=map"
+    map_request = f"http://static-maps.yandex.ru/1.x/?ll={x},{y}&spn={str(m)},{str(m)}&l=map"
     response = requests.get(map_request)
 
     if not response:
